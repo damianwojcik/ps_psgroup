@@ -1,6 +1,5 @@
 #languages-block-top {
   float: right;
-  border-left: 1px solid #515151;
   position: relative; }
   @media (max-width: 479px) {
     #languages-block-top {
@@ -8,11 +7,10 @@
   #languages-block-top span.firstWord {
     display: none; }
   #languages-block-top div.current {
-    font-weight: bold;
+      font: 300 13px/22px "Roboto", sans-serif;
     padding: 8px 10px 10px 10px;
     line-height: 18px;
-    color: #fff;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+    color: #000;
     cursor: pointer; }
     @media (max-width: 479px) {
       #languages-block-top div.current {
@@ -22,11 +20,11 @@
     #languages-block-top div.current strong {
       color: #777777; }
     #languages-block-top div.current:after {
-      content: "\f0d7";
+      content: "\f107";
       font-family: "FontAwesome";
-      font-size: 18px;
+      font-size: 14px;
       line-height: 18px;
-      color: #686666;
+      color: #000;
       vertical-align: -2px;
       padding-left: 12px; }
       @media (max-width: 479px) {
@@ -40,22 +38,25 @@
         display: none; } }
   #languages-block-top ul {
     display: none;
+	-webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0, 0.05);
     position: absolute;
+	border-radius:1px solid #ebebec;
     top: 37px;
     left: 0;
     width: 157px;
-    background: #333;
+    background: #fff;
     z-index: 2; }
     #languages-block-top ul li {
-      color: #fff;
+      color: #000;
+	  font: 300 13px "Roboto", sans-serif;
+	  border-radius:3px;
       line-height: 35px;
       font-size: 13px; }
       #languages-block-top ul li a,
       #languages-block-top ul li > span {
         padding: 0 10px 0 12px;
         display: block;
-        color: #fff; }
-      #languages-block-top ul li.selected, #languages-block-top ul li:hover a {
-        background: #484848; }
 
-/*# sourceMappingURL=blocklanguages.css.map */
+        color: #000; }
+      #languages-block-top ul li.selected, #languages-block-top ul li:hover a {
+        background: #f6f6f6;  border-radius:3px;}

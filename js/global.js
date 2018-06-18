@@ -124,6 +124,24 @@ $(document).ready(function () {
 		});
 	}
 
+		// Categories Slider
+		var categoriesSlider = $('.js-categoryslider');
+		if(categoriesSlider.length > 0) {
+			categoriesSlider.bxSlider({
+				minSlides: 1,
+				maxSlides: 4,
+				slideWidth: 270,
+				slideMargin: 10,
+				pager: true,
+				controls: true,
+				nextText: 'Next',
+				prevText: 'Prev',
+				moveSlides: 2,
+				infiniteLoop: false,
+				hideControlOnEnd: false
+			});
+		}
+
 });
 
 function highdpiInit() {

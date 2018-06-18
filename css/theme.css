@@ -1,0 +1,104 @@
+/* BEGIN THEME */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul, ol {
+    margin-bottom: 0;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    background: #FFF;
+    overflow-x: hidden;
+    position: relative;
+    font-weight: 400;
+    color: #353645;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+}
+  
+/* BEGIN HEADER */
+.toppanel {
+    position: fixed;
+    top: 0;
+    display: block;
+    z-index: 9999;
+    width: 100%;
+    text-transform: uppercase;
+    background-color: navy;
+}
+
+.toppanel .container {
+    padding: 15px 35px;
+}
+
+#header_logo a {
+    display: block;
+    padding: 15px 30px;
+}
+
+.toppanel__menu {
+    display: block;
+    float: right;
+    margin-top: 7px;
+}
+
+.toppanel__menu-list {
+    list-style-type: none;
+    display: table;
+}
+
+.toppanel__menu-list>li {
+    display: inline-block;
+    float: left;
+}
+
+.toppanel__menu-list>li:not(:first-child) {
+    margin-left: 7px;
+}
+
+.toppanel__menu-list>li,
+.toppanel__menu-list>li>a,
+.toppanel__menu-list>li>span,
+.languages-block,
+#languages-block-top ul a,
+#languages-block-top ul li.selected span{
+    font-size: 17px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10px;
+    color: #FFF;
+}
+
+.toppanel__menu-list>li>a,
+.toppanel__menu-list>li>span {
+    display: block;
+}
+
+.languages-block {
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+
+#languages-block-top ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 47px;
+    width: 120px;
+}
+
+/* END HEADER */
+
+/* END THEME */
