@@ -99,6 +99,7 @@
 			<div class="submit">
 				<input type="text" name="url" value="" class="hidden" />
 				<input type="hidden" name="contactKey" value="{$contactKey}" />
+				<div class="g-recaptcha" data-sitekey="6Lc8tV8UAAAAAJnvKADSKqElkcys2bFDXWJ2xWzA"></div>
 				<button type="submit" name="submitMessage" id="submitMessage" class="button btn btn-default button-medium"><span>{l s='Send'}<i class="icon-chevron-right right"></i></span></button>
 			</div>
 		</fieldset>

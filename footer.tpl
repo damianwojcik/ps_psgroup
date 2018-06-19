@@ -27,58 +27,67 @@
 					{if isset($right_column_size) && !empty($right_column_size)}
 						<div id="right_column" class="col-xs-12 col-sm-{$right_column_size|intval} column">{$HOOK_RIGHT_COLUMN}</div>
 					{/if}
-					{if $page_name =='index'}
-						<form action="/kontakt" method="post" class="contact-form-box" enctype="multipart/form-data">
-							<fieldset>
-								<h3 class="page-subheading">{l s='send a message'}</h3>
-								<div class="clearfix">
-									<div class="col-xs-12 col-md-3">
-										<input type="hidden" name="id_contact" value="2">
-										<div class="form-group selector1">
-											<p class="text hidden">
-												<label for="product">{l s='Product'}</label>
-												<input class="form-control grey" type="text" id="productInput" name="product" value="Home" />
-											</p>
-											<p class="text">
-												<label for="name">{l s='Name'}</label>
-												<input class="form-control grey" type="text" id="name" name="name" value="" />
-											</p>
-											<p class="text">
-												<label for="phone">{l s='Phone'}</label>
-												<input class="form-control grey" type="text" id="phone" name="phone" value="" />
-											</p>
-											<p class="form-group">
-												<label for="email">{l s='Email address'}</label>
-												<input class="form-control grey validate" type="text" id="email" name="from" data-validate="isEmail" value="" />
-											</p>
-										</div>
-										
-										<div class="submit">
-											<button type="submit" name="submitMessage" id="submitMessage" class="button btn btn-default button-medium"><span>Send<i class="icon-chevron-right right"></i></span></button>
-										</div>
-									</div>
-									<div class="col-xs-12 col-md-9">
-										<div class="form-group">
-											<label for="message">{l s='Message'}</label>
-											<textarea style="min-height:100px;" class="form-control" id="message" name="message">Question about</textarea>
-										</div>
-									</div>
-								</div>
-							</fieldset>
-						</form>
-					{/if}
 					</div><!-- .row -->
-				</div><!-- #columns -->
-			</div><!-- .columns-container -->
-			{if isset($HOOK_FOOTER)}
-				<!-- Footer -->
-				<div class="footer-container">
-					<footer id="footer"  class="container">
-						<div class="row">{$HOOK_FOOTER}</div>
-					</footer>
-				</div><!-- #footer -->
+				</div><!-- .container -->
+			</main><!-- .content -->
+			{if $page_name =='index'}
+				<section class="homeform">
+					<div class="container">
+						<div class="row">
+							<header class="section-header">
+								<h2 class="section-header__subheading">{l s='Get in touch'}</h2>
+								<h1 class="section-header__heading">{l s='Contact'}</h1>
+							</header><!-- /.section-header -->
+							<form action="/kontakt" method="post" enctype="multipart/form-data">
+								<fieldset>
+									<input type="hidden" name="id_contact" value="2">
+									<span class="hidden">
+										<label for="product">{l s='Product'}</label>
+										<input class="form-control" type="text" id="productInput" name="product" value="Home" />
+									</span>
+									<div class="form-row">
+										<div class="form-group">
+											<label for="name">{l s='Name'}</label>
+											<input class="form-control" type="text" id="name" name="name" value="" placeholder="{l s='Name'}"/>
+										</div>
+										<div class="form-group">
+											<label for="phone">{l s='Phone Number'}</label>
+											<input class="form-control" type="text" id="phone" name="phone" value="" placeholder="{l s='Phone Number'}"/>
+										</div>
+										<div class="form-group">
+											<label for="email">{l s='E-mail'}</label>
+											<input class="form-control validate" type="text" id="email" name="from" data-validate="isEmail" value="" placeholder="{l s='E-Mail'}"/>
+										</div>
+									</div>
+									<div class="form-group textarea-group">
+										<label for="message">{l s='Message'}</label>
+										<textarea class="form-control" id="message" name="message" placeholder="{l s='Message'}"></textarea>
+									</div>
+									<div class="text-center">
+										<div class="g-recaptcha" data-sitekey="6Lc8tV8UAAAAAJnvKADSKqElkcys2bFDXWJ2xWzA"></div>
+										<button type="submit" name="submitMessage" id="submitMessage" class="btn">
+											{l s='Send message'}
+										</button>
+									</div>
+								</fieldset>
+							</form>
+						</div><!-- /.row -->
+					</div><!-- /.container -->
+				</section><!-- /.homeform -->
 			{/if}
-		</div><!-- #page -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="site-logo">
+								<a href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{$shop_name|escape:'html':'UTF-8'}">
+									<img class="logo img-responsive" src="{$logo_url}" alt="{$shop_name|escape:'html':'UTF-8'}"{if isset($logo_image_width) && $logo_image_width} width="{$logo_image_width}"{/if}{if isset($logo_image_height) && $logo_image_height} height="{$logo_image_height}"{/if}/>
+								</a>
+							</div>
+							{if isset($HOOK_TOP)}{$HOOK_TOP}{/if}
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</footer><!-- /#footer -->
+		</div><!-- /#page -->
 {/if}
 {include file="$tpl_dir./global.tpl"}
 	</body>
