@@ -1,0 +1,36 @@
+.content .container,
+.homeform .container {
+    padding: 45px 30px;
+}
+
+.homeform form, .section-header {
+    margin-bottom: 20px;
+}
+
+.section-header__heading {
+    font-size: 34px;
+}
+
+.homeslider .swiper-wrap {
+    padding: 50px 30px;
+}
+
+.homeslider .swiper-button-prev {
+    left: 15px;
+}
+
+.homeslider .swiper-button-next {
+    right: 15px;
+}
+
+.content .swiper-button-prev {
+    left: 0;
+}
+
+.content .swiper-button-next {
+    right: 0;
+}
+
+.categoryslider__img {
+    height: 175px;
+}

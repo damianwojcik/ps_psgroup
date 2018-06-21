@@ -1,0 +1,35 @@
+.container {
+    max-width: 100%;
+    width: 100%;
+}
+
+.content .container,
+.homeform .container {
+    padding: 50px;
+}
+
+.homeslider .swiper-button-next {
+    right: 25px;
+}
+
+.homeslider .swiper-button-prev {
+    left: 25px;
+}
+
+.homeslider .swiper-wrap {
+    max-width: 100%;
+}
+
+.homeform form,
+.section-header {
+    margin-bottom: 30px;
+}
+
+.categoryslider__title {
+    font-size: 20px;
+    padding: 20px 10px;
+}
+
+.categoryslider__img {
+    height: 250px;
+}

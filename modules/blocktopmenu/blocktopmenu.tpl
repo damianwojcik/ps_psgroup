@@ -1,7 +1,15 @@
 {if $MENU != ''}
 	<div class="toppanel__menu">
-		<span class="cat-title">{l s="Menu" mod="blocktopmenu"}</span>
+		<div class="mobile toggle-nav">
+			<span class="toggle-nav__line"></span>
+		</div>
+		<!-- /.toggle-nav-->
 		<ul class="toppanel__menu-list">
+			<li class="mobile">
+				<a href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{$shop_name|escape:'html':'UTF-8'}">
+					{l s='Home'}
+				</a>
+			</li>
 			{$MENU}
 			{if $MENU_SEARCH}
 				<li class="sf-search noBack">

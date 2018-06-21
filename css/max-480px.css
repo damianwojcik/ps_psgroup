@@ -1,0 +1,28 @@
+#header .toppanel__menu-list {
+    width: 100%;
+}
+
+.recaptcha-wrapper {
+    display: block;
+    margin-bottom: 0;
+}
+
+.g-recaptcha {
+    transform: scale(.77);
+    transform-origin: 0 0;
+    max-width: 232px;
+}
+
+#footer .toppanel__menu-list>li {
+    display: block;
+    float: none;
+    padding: 0;
+    margin-left: 0;
+    margin-bottom: 5px;
+}
+
+#footer .toppanel__menu-list>li a {
+    display: block;
+    float: none;
+    padding: 5px;
+}

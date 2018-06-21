@@ -23,7 +23,6 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 {if !isset($content_only) || !$content_only}
-					</div><!-- #center_column -->
 					{if isset($right_column_size) && !empty($right_column_size)}
 						<div id="right_column" class="col-xs-12 col-sm-{$right_column_size|intval} column">{$HOOK_RIGHT_COLUMN}</div>
 					{/if}
@@ -64,7 +63,9 @@
 										<textarea class="form-control" id="message" name="message" placeholder="{l s='Message'}"></textarea>
 									</div>
 									<div class="text-center">
-										<div class="g-recaptcha" data-sitekey="6Lc8tV8UAAAAAJnvKADSKqElkcys2bFDXWJ2xWzA"></div>
+										<div class="recaptcha-wrapper">
+											<div class="g-recaptcha cf" data-sitekey="6Lc8tV8UAAAAAJnvKADSKqElkcys2bFDXWJ2xWzA"></div>
+										</div>
 										<button type="submit" name="submitMessage" id="submitMessage" class="btn">
 											{l s='Send message'}
 										</button>

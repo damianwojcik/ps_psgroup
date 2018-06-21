@@ -1,0 +1,66 @@
+.btn, .btn:active, .btn:focus, .btn:visited {
+    font-size: 14px;
+    padding: 12px 30px 10px 30px;
+}
+
+.section-header__subheading {
+    font-size: 16px;
+}
+
+.section-header__heading {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.section-header:after {
+    top: 0;
+}
+
+.btn-wrapper {
+    margin-top: 40px;
+}
+
+.categoryslider__title {
+    font-size: 16px;
+    padding: 15px 10px;
+}
+
+.categoryslider__img {
+    height: 200px;
+}
+
+.homeform form {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.homeform .form-row {
+    display: block;
+}
+
+.homeform .form-row .form-group {
+    margin: 0;
+}
+
+.homeform .textarea-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.homeform form .form-control {
+    margin-bottom: 20px;
+}
+
+.recaptcha-wrapper {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.g-recaptcha>div {
+    margin-bottom: 0;
+}
+
+.g-recaptcha {
+    display: inline-block;
+}

@@ -1,0 +1,13 @@
+.content .swiper-button-next,
+.content .swiper-button-prev {
+    top: auto;
+    bottom: 0;
+}
+
+.content .swiper-button-next {
+    right: 100px;
+}
+
+.content .swiper-button-prev {
+    left: 100px;
+}
