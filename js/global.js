@@ -122,28 +122,46 @@ $(document).ready(function () {
 		}
 	});
 
-	// Mobile menu handler
+	// Mobile events handlers
 	var toggleNavElem = $('.toggle-nav');
 	var menuElem = $('.toppanel__menu-list');
+	var toggleFiltersElem = $('.toggle-filters');
+	var filtersContainer = $('.category .col-3');
 	var $wind = $(window);
 	var windW = $wind.width();
+
+	toggleNavElem.on('click', function() {
+		menuElem.toggleClass('opened');
+		filtersContainer.removeClass('opened');
+	});
+
+	toggleFiltersElem.on('click', function() {
+		filtersContainer.toggleClass('opened');
+		menuElem.removeClass('opened');
+	});
 
 	$wind.on('resize', function(){
         windW = $wind.width();
 
         if (windW > 960) {
             menuElem.removeClass('opened');
+            filtersContainer.removeClass('opened');
         }
     });
 
-	toggleNavElem.on('click', function() {
-		menuElem.toggleClass('opened');
-	});
-
 	if (windW < 960) {
 		menuElem.removeClass('opened');
+		filtersContainer.removeClass('opened');
 	}
 
+	$(document).mouseup(function (e) {
+		if (!menuElem.is(e.target) && menuElem.has(e.target).length === 0) {
+			menuElem.removeClass('opened');
+		}
+		if (!filtersContainer.is(e.target) && filtersContainer.has(e.target).length === 0) {
+			filtersContainer.removeClass('opened');
+		}
+	  });
 
 });
 

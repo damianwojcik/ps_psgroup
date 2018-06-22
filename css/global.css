@@ -604,6 +604,29 @@ a:hover, a:active, a:visited, a:focus {
 .btn.btn-dark:hover {
   color: #ec5b50;
 }
+
+button {
+  padding: 0 7px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  text-align: inherit;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  text-transform: uppercase
+}
+
+button:hover {
+  color: #f05c50;
+}
 /* END BUTTONS */
 
 /* BEGIN LAYOUT */
@@ -1065,8 +1088,15 @@ a:hover, a:active, a:visited, a:focus {
   float: right;
 }
 
+.toggle-filters {
+  display: none;
+}
+
 .grid-list-buttons li {
   display: inline-block;
+}
+
+.grid-list-buttons li:not(:first-child) {
   margin-left: 5px;
 }
 
@@ -1263,9 +1293,10 @@ input[type=checkbox] {
 .button-container {
   padding-right: 50px;
   width: 130px;
+  overflow: hidden;
 }
 
-.button-container .btn {
+.button-container .btn:not(:last-child) {
   margin-bottom: 12px;
 }
 
@@ -1356,29 +1387,6 @@ input[type=checkbox] {
 }
 
 .pagination a:hover {
-  color: #f05c50;
-}
-
-.pagination button {
-  padding: 0 7px;
-  border: none;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  width: auto;
-  overflow: visible;
-  background: transparent;
-  text-align: inherit;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
-  -webkit-appearance: none;
-  text-transform: uppercase
-}
-
-.pagination button:hover {
   color: #f05c50;
 }
 

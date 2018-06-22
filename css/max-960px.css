@@ -4,10 +4,13 @@
 }
 
 #header .toppanel__menu-list {
-    display: none;
+    display: block;
+    visibility: hidden;
     position: fixed;
-    height: 100%;
-    width: 320px;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 0;
+    width: 280px;
     padding: 80px 20px 20px 20px;
     top: 0;
     bottom: 0;
@@ -15,10 +18,12 @@
     right: 0;
     z-index: 999;
     box-shadow: -5px 0px 30px -5px rgba(0,0,0,.4);
+    transition: 0.4s all cubic-bezier(0.2, 0, 0.065, 0.25);
 }
 
 #header .toppanel__menu-list.opened {
-    display: block;
+    visibility: visible;
+    height: 100%;
 }
 
 #header .toppanel__menu-list>li {
@@ -173,4 +178,81 @@
 
 #footer .toppanel__menu-list>li {
     display: inline-block;
+}
+
+.category .col-3 {
+    visibility: hidden;
+    transition: 0.4s all cubic-bezier(0.2, 0, 0.065, 0.25);
+    height: 0;
+    overflow-y: scroll;
+    padding: 110px 10px 10px 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    z-index: 999;
+    box-shadow: -5px 0px 30px -5px rgba(0,0,0,.4);
+    background-color: white;
+    border-right: 1px solid rgba(0,0,0, 0.1)
+}
+
+.category .col-9 {
+    width: 100%;
+    padding-left: 0;
+}
+
+.product_list.grid li .product__img-link {
+    height: 225px;
+}
+
+.product .btn {
+    padding: 15px;
+}
+
+.product_list.list .product__content,
+.product_list.list .button-container {
+    display: block;
+    padding: 25px 15px;
+    width: auto;
+}
+
+.product_list.list .button-container .btn {
+    display: inline-block;
+    float: left;
+    margin-bottom: 0;
+}
+
+.product_list.list .button-container .btn:not(:first-child) {
+    margin-left: 15px;
+}
+
+.product_list.list .button-container {
+    padding-top: 0;
+}
+
+.toggle-filters {
+    display: inline-block;
+    border: 1px solid #353645;
+    padding: 10px;
+    margin-bottom: 7px;
+    font-size: 14px;
+    transition: all 0.4s ease;
+}
+
+.toggle-filters:hover {
+    background-color: rgba(0,0,0,0.04);
+}
+
+.toggle-filters [class^="flaticon-"]:before, .toggle-filters [class*=" flaticon-"]:before, .toggle-filters [class^="flaticon-"]:after, .toggle-filters [class*=" flaticon-"]:after {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.content_sortPagiBar {
+    display: block;
+}
+
+.category .col-3.opened {
+    visibility: visible;
+    height: 100%;
 }

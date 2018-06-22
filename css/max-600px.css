@@ -33,4 +33,44 @@
 
 .categoryslider__img {
     height: 175px;
+    margin-bottom: 7px;
+}
+
+.product {
+    padding: 20px;
+    text-align: center;
+}
+
+.product__content {
+    text-align: center;
+}
+
+.product__name, .product__manufacturer {
+    margin-bottom: 5px;
+}
+
+.product__img-link, .product__content, .button-container {
+    display: block;
+}
+
+.product_list.list .product__content, .product_list.list .button-container {
+    padding: 0;
+}
+
+.product__img-link {
+    width: 100%;
+}
+
+.product_list.list .button-container .btn {
+    float: none;
+}
+
+.title_block, .layered_subtitle_heading, #layered_block_left .layered_subtitle,
+.layered_filter a {
+    font-size: 14px;
+}
+
+.layered_filter a {
+    position: relative;
+    top: -2px;
 }

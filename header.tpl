@@ -52,6 +52,7 @@
 			<link rel="stylesheet" media="(max-width: 1170px)" href="{$css_dir|escape:'html':'UTF-8'}max-1170px.css">
 			<link rel="stylesheet" media="(max-width: 1024px)" href="{$css_dir|escape:'html':'UTF-8'}max-1024px.css">
 			<link rel="stylesheet" media="(max-width: 960px)" href="{$css_dir|escape:'html':'UTF-8'}max-960px.css">
+			<link rel="stylesheet" media="(max-width: 768px)" href="{$css_dir|escape:'html':'UTF-8'}max-768px.css">
 			<link rel="stylesheet" media="(max-width: 600px)" href="{$css_dir|escape:'html':'UTF-8'}max-600px.css">
 			<link rel="stylesheet" media="(max-width: 480px)" href="{$css_dir|escape:'html':'UTF-8'}max-480px.css">
 		{/if}
