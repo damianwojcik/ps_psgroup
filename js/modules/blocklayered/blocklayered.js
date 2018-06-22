@@ -452,7 +452,7 @@ function reloadContent(params_plus)
 			// New working for default theme 1.4 and theme 1.5
 			var splitData = $('.selectProductSort').val().split(':');
 		}
-		data += '&orderby='+splitData[0]+'&orderway='+splitData[1];
+		data += '&orderby='+splitData[0]+'&orderway='+splitData[1]+'&asd=';
 	}
 	if ($('select[name=n]:first').length)
 	{

@@ -24,7 +24,7 @@
 *}
 {if !isset($content_only) || !$content_only}
 					{if isset($right_column_size) && !empty($right_column_size)}
-						<div id="right_column" class="col-xs-12 col-sm-{$right_column_size|intval} column">{$HOOK_RIGHT_COLUMN}</div>
+						<div id="right_column" class="col col-{$right_column_size|intval} column">{$HOOK_RIGHT_COLUMN}</div>
 					{/if}
 					</div><!-- .row -->
 				</div><!-- .container -->
@@ -46,20 +46,20 @@
 									</span>
 									<div class="form-row">
 										<div class="form-group">
-											<label for="name">{l s='Name'}</label>
+											<label class="visuallyhidden" for="name">{l s='Name'}</label>
 											<input class="form-control" type="text" id="name" name="name" value="" placeholder="{l s='Name'}"/>
 										</div>
 										<div class="form-group">
-											<label for="phone">{l s='Phone Number'}</label>
+											<label class="visuallyhidden" for="phone">{l s='Phone Number'}</label>
 											<input class="form-control" type="text" id="phone" name="phone" value="" placeholder="{l s='Phone Number'}"/>
 										</div>
 										<div class="form-group">
-											<label for="email">{l s='E-mail'}</label>
+											<label class="visuallyhidden" for="email">{l s='E-mail'}</label>
 											<input class="form-control validate" type="text" id="email" name="from" data-validate="isEmail" value="" placeholder="{l s='E-Mail'}"/>
 										</div>
 									</div>
 									<div class="form-group textarea-group">
-										<label for="message">{l s='Message'}</label>
+										<label class="visuallyhidden" for="message">{l s='Message'}</label>
 										<textarea class="form-control" id="message" name="message" placeholder="{l s='Message'}"></textarea>
 									</div>
 									<div class="text-center">

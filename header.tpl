@@ -41,13 +41,13 @@
 		<meta name="robots" content="{if isset($nobots)}no{/if}index,{if isset($nofollow) && $nofollow}no{/if}follow">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="theme-color" content="#f05c50">
 		<link rel="icon" type="image/vnd.microsoft.icon" href="{$favicon_url}?{$img_update_time}">
 		<link rel="shortcut icon" type="image/x-icon" href="{$favicon_url}?{$img_update_time}">
 		{if isset($css_files)}
 			{foreach from=$css_files key=css_uri item=media}
 				<link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" media="{$media|escape:'html':'UTF-8'}">
 			{/foreach}
-			<link rel="stylesheet" href="{$css_dir|escape:'html':'UTF-8'}theme.css" media="{$media|escape:'html':'UTF-8'}">
 			<link rel="stylesheet" media="(max-width: 1280px)" href="{$css_dir|escape:'html':'UTF-8'}max-1280px.css">
 			<link rel="stylesheet" media="(max-width: 1170px)" href="{$css_dir|escape:'html':'UTF-8'}max-1170px.css">
 			<link rel="stylesheet" media="(max-width: 1024px)" href="{$css_dir|escape:'html':'UTF-8'}max-1024px.css">
@@ -104,7 +104,7 @@
 							{include file="$tpl_dir./breadcrumb.tpl"}
 						{/if}
 						{if isset($left_column_size) && !empty($left_column_size)}
-							<div id="left_column" class="column col-xs-12 col-sm-{$left_column_size|intval}">{$HOOK_LEFT_COLUMN}</div>
+							<div id="left_column" class="col col-{$left_column_size|intval}">{$HOOK_LEFT_COLUMN}</div>
 						{/if}
 						{if isset($left_column_size) && isset($right_column_size)}{assign var='cols' value=(12 - $left_column_size - $right_column_size)}{else}{assign var='cols' value=12}{/if}
 	{/if}

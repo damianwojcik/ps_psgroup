@@ -53,42 +53,19 @@
 	{/if}
 	<!-- Pagination -->
 	<div id="pagination{if isset($paginationId)}_{$paginationId}{/if}" class="pagination clearfix">
-	    {if $nb_products > $products_per_page && $start!=$stop}
-			<form class="showall" action="{if !is_array($requestNb)}{$requestNb}{else}{$requestNb.requestUrl}{/if}" method="get">
-				<div>
-					{if isset($search_query) AND $search_query}
-						<input type="hidden" name="search_query" value="{$search_query|escape:'html':'UTF-8'}" />
-					{/if}
-					{if isset($tag) AND $tag AND !is_array($tag)}
-						<input type="hidden" name="tag" value="{$tag|escape:'html':'UTF-8'}" />
-					{/if}
-	                <button type="submit" class="btn btn-default button exclusive-medium">
-	                	<span>{l s='Show all'}</span>
-	                </button>
-					{if is_array($requestNb)}
-						{foreach from=$requestNb item=requestValue key=requestKey}
-							{if $requestKey != 'requestUrl' && $requestKey != 'p'}
-								<input type="hidden" name="{$requestKey|escape:'html':'UTF-8'}" value="{$requestValue|escape:'html':'UTF-8'}" />
-							{/if}
-						{/foreach}
-					{/if}
-	                <input name="n" id="nb_item" class="hidden" value="{$nb_products}" />
-				</div>
-			</form>
-		{/if}
 		{if $start!=$stop}
-			<ul class="pagination">
+			<ul class="pagination__list">
 				{if $p != 1}
 					{assign var='p_previous' value=$p-1}
 					<li id="pagination_previous{if isset($paginationId)}_{$paginationId}{/if}" class="pagination_previous">
 						<a{$no_follow_text} href="{$link->goPage($requestPage, $p_previous)}" rel="prev">
-							<i class="icon-chevron-left"></i> <b>{l s='Previous'}</b>
+							< {l s='Prev'}
 						</a>
 					</li>
 				{else}
 					<li id="pagination_previous{if isset($paginationId)}_{$paginationId}{/if}" class="disabled pagination_previous">
 						<span>
-							<i class="icon-chevron-left"></i> <b>{l s='Previous'}</b>
+							< {l s='Prev'}
 						</span>
 					</li>
 				{/if}
@@ -173,17 +150,40 @@
 					{assign var='p_next' value=$p+1}
 					<li id="pagination_next{if isset($paginationId)}_{$paginationId}{/if}" class="pagination_next">
 						<a{$no_follow_text} href="{$link->goPage($requestPage, $p_next)}" rel="next">
-							<b>{l s='Next'}</b> <i class="icon-chevron-right"></i>
+							{l s='Next'} >
 						</a>
 					</li>
 				{else}
 					<li id="pagination_next{if isset($paginationId)}_{$paginationId}{/if}" class="disabled pagination_next">
 						<span>
-							<b>{l s='Next'}</b> <i class="icon-chevron-right"></i>
+							{l s='Next'} >
 						</span>
 					</li>
 				{/if}
 			</ul>
+		{/if}
+		{if $nb_products > $products_per_page && $start!=$stop}
+			<form class="showall" action="{if !is_array($requestNb)}{$requestNb}{else}{$requestNb.requestUrl}{/if}" method="get">
+				<div>
+					{if isset($search_query) AND $search_query}
+						<input type="hidden" name="search_query" value="{$search_query|escape:'html':'UTF-8'}" />
+					{/if}
+					{if isset($tag) AND $tag AND !is_array($tag)}
+						<input type="hidden" name="tag" value="{$tag|escape:'html':'UTF-8'}" />
+					{/if}
+	                <button type="submit">
+	                	<span>{l s='Show all'}</span>
+	                </button>
+					{if is_array($requestNb)}
+						{foreach from=$requestNb item=requestValue key=requestKey}
+							{if $requestKey != 'requestUrl' && $requestKey != 'p'}
+								<input type="hidden" name="{$requestKey|escape:'html':'UTF-8'}" value="{$requestValue|escape:'html':'UTF-8'}" />
+							{/if}
+						{/foreach}
+					{/if}
+	                <input name="n" id="nb_item" class="hidden" value="{$nb_products}" />
+				</div>
+			</form>
 		{/if}
 	</div>
     <div class="product-count">
@@ -198,7 +198,7 @@
         	{assign var='productShowingStart' value=$n*$p-$n+1}
         {/if}
         {if $nb_products > 1}
-        	{l s='Showing %1$d - %2$d of %3$d items' sprintf=[$productShowingStart, $productShowing, $nb_products]}
+        	{l s='Showing %1$d - %2$d of %3$d item' sprintf=[$productShowingStart, $productShowing, $nb_products]}
 		{else}
         	{l s='Showing %1$d - %2$d of 1 item' sprintf=[$productShowingStart, $productShowing]}
        	{/if}

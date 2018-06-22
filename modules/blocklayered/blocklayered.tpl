@@ -25,13 +25,13 @@
 
 {if $nbr_filterBlocks != 0}
 <div id="layered_block_left" class="block">
-	<p class="title_block">{l s='Catalog' mod='blocklayered'}</p>
+	<p class="title_block">{l s='Filter by' mod='blocklayered'}</p>
 	<div class="block_content">
 		<form action="#" id="layered_form">
 			<div>
 				{if isset($selected_filters) && $n_filters > 0}
 				<div id="enabled_filters">
-					<span class="layered_subtitle" style="float: none;">
+					<span class="visuallyhidden">
 						{l s='Enabled filters:' mod='blocklayered'}
 					</span>
 					<ul>
@@ -54,7 +54,7 @@
 											{foreach from=$filter.values key=id_value item=value}
 												{if $id_value == $filter_key && !is_numeric($filter_value) && ($filter.type eq 'id_attribute_group' || $filter.type eq 'id_feature') || $id_value == $filter_value && $filter.type neq 'id_attribute_group' && $filter.type neq 'id_feature'}
 													<li>
-														<a href="#" data-rel="layered_{$filter.type_lite}_{$id_value}" title="{l s='Cancel' mod='blocklayered'}"><i class="icon-remove"></i></a>
+														<a href="#" data-rel="layered_{$filter.type_lite}_{$id_value}" title="{l s='Cancel' mod='blocklayered'}">&times;</a>
 														{l s='%1$s: %2$s' mod='blocklayered' sprintf=[$filter.name, $value.name]}
 													</li>
 												{/if}
