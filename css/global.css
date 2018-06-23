@@ -177,7 +177,6 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   font-size: 13px;
   line-height: 1.42857;
   color: #9c9b9b;
-  vertical-align: middle;
   background-color: #fff;
   border: 1px solid #d6d4d4;
   border-radius: 0px;
@@ -297,7 +296,6 @@ a {
   }
 
 img {
-  vertical-align: middle;
   display: block;
   max-width: 100%;
   height: auto; }
@@ -500,7 +498,6 @@ body {
 }
 
 img {
-    vertical-align: middle;
     display: block;
     max-width: 100%;
     height: auto;
@@ -667,7 +664,6 @@ button:hover {
 /* END LAYOUT */
 
 .site-logo {
-    display: inline-block;
     float: left;
 }
 
@@ -711,7 +707,6 @@ button:hover {
 }
 
 .toppanel__menu-list>li {
-    display: inline-block;
     float: left;
 }
 
@@ -1320,7 +1315,6 @@ input[type=checkbox] {
 }
 
 .product_list.grid li {
-  display: inline-block;
   float: left;
   width: calc(33.33% - 20px);
 }
@@ -1401,7 +1395,6 @@ input[type=checkbox] {
 .pagination__list li,
 .pagination .showall,
 .product-count {
-  display: inline-block;
   float: left;
 }
 
