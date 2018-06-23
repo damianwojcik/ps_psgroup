@@ -40,6 +40,7 @@
 
 .product_list.grid li .product__img-link {
     height: 175px;
+    margin-bottom: 10px;
 }
 
 .product__content {
@@ -51,10 +52,10 @@
 }
 
 .product_list.grid li .product__img {
-    width: 245px;
+    height: 100%;
     display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
 }

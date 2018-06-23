@@ -248,6 +248,27 @@
     margin-right: 5px;
 }
 
+.title_block {
+    display: inline-block
+}
+
+.close_enabled_filters {
+    display: block;
+    color: #f05c50;
+    float: right;
+    font-size: 24px;
+    border: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    z-index: 9999;
+    position: relative;
+    line-height: 1;
+    padding: 2px 5px;
+}
+
+.close_enabled_filters:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
 .content_sortPagiBar {
     display: block;
 }

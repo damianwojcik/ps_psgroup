@@ -52,55 +52,36 @@
 	{include file="$tpl_dir./errors.tpl"}
 	<form action="{$request_uri}" method="post" class="contact-form-box" enctype="multipart/form-data">
 		<fieldset>
-			<h3 class="page-subheading">{l s='send a message'}</h3>
-			<div class="clearfix">
-				<div class="col-xs-12 col-md-3">
-					<input type="hidden" name="id_contact" value="2">
-					<p class="text hidden">
-						<label for="product">{l s='Product'}</label>
-						{if isset($customerThread.product)}
-							<input class="form-control grey" type="text" id="productInput" name="product" value="{$customerThread.product|escape:'htmlall':'UTF-8'}" readonly="readonly" />
-						{else}
-							<input class="form-control grey" type="text" id="productInput" name="product" value="" />
-						{/if}
-					</p>
-					<p class="text">
-						<label for="name">{l s='Name'}</label>
-						{if isset($customerThread.name)}
-							<input class="form-control grey" type="text" id="name" name="name" value="{$customerThread.name|escape:'htmlall':'UTF-8'}" readonly="readonly" />
-						{else}
-							<input class="form-control grey" type="text" id="name" name="name" value="" />
-						{/if}
-					</p> 
-					<p class="text">
-						<label for="phone">{l s='Phone'}</label>
-						{if isset($customerThread.phone)}
-							<input class="form-control grey" type="text" id="phone" name="phone" value="{$customerThread.phone|escape:'htmlall':'UTF-8'}" readonly="readonly" />
-						{else}
-							<input class="form-control grey" type="text" id="phone" name="phone" value="" />
-						{/if}
-					</p> 
-					<p class="form-group">
-						<label for="email">{l s='Email address'}</label>
-						{if isset($customerThread.email)}
-							<input class="form-control grey" type="text" id="email" name="from" value="{$customerThread.email|escape:'html':'UTF-8'}" readonly="readonly" />
-						{else}
-							<input class="form-control grey validate" type="text" id="email" name="from" data-validate="isEmail" value="{$email|escape:'html':'UTF-8'}" />
-						{/if}
-					</p>
+			<input type="hidden" name="id_contact" value="2">
+			<span class="hidden">
+				<label for="product">{l s='Product'}</label>
+				<input class="form-control productInput" type="text" id="productInput" name="product" value="" />
+			</span>
+			<div class="form-row">
+				<div class="form-group">
+					<label class="visuallyhidden" for="name">{l s='Name'}</label>
+					<input class="form-control" type="text" id="name" name="name" value="" placeholder="{l s='Name'}"/>
 				</div>
-				<div class="col-xs-12 col-md-9">
-					<div class="form-group">
-						<label for="message">{l s='Message'}</label>
-						<textarea class="form-control" id="message" name="message">{if isset($message)}{$message|escape:'html':'UTF-8'|stripslashes}{/if}</textarea>
-					</div>
+				<div class="form-group">
+					<label class="visuallyhidden" for="phone">{l s='Phone Number'}</label>
+					<input class="form-control" type="text" id="phone" name="phone" value="" placeholder="{l s='Phone Number'}"/>
+				</div>
+				<div class="form-group">
+					<label class="visuallyhidden" for="email">{l s='E-mail'}</label>
+					<input class="form-control validate" type="text" id="email" name="from" data-validate="isEmail" value="" placeholder="{l s='E-Mail'}"/>
 				</div>
 			</div>
-			<div class="submit">
-				<input type="text" name="url" value="" class="hidden" />
-				<input type="hidden" name="contactKey" value="{$contactKey}" />
-				<div class="g-recaptcha" data-sitekey="6Lc8tV8UAAAAAJnvKADSKqElkcys2bFDXWJ2xWzA"></div>
-				<button type="submit" name="submitMessage" id="submitMessage" class="button btn btn-default button-medium"><span>{l s='Send'}<i class="icon-chevron-right right"></i></span></button>
+			<div class="form-group textarea-group">
+				<label class="visuallyhidden" for="message">{l s='Message'}</label>
+				<textarea class="form-control" id="message" name="message" placeholder="{l s='Message'}"></textarea>
+			</div>
+			<div class="text-center">
+				<div class="recaptcha-wrapper">
+					<div class="g-recaptcha cf" data-sitekey="6Lc8tV8UAAAAAJnvKADSKqElkcys2bFDXWJ2xWzA"></div>
+				</div>
+				<button type="submit" name="submitMessage" id="submitMessage" class="btn">
+					{l s='Send message'}
+				</button>
 			</div>
 		</fieldset>
 	</form>

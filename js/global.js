@@ -126,6 +126,7 @@ $(document).ready(function () {
 	var toggleNavElem = $('.toggle-nav');
 	var menuElem = $('.toppanel__menu-list');
 	var toggleFiltersElem = $('.toggle-filters');
+	var closeToggleFiltersElem = $('.close_enabled_filters');
 	var filtersContainer = $('.category .col-3');
 	var $wind = $(window);
 	var windW = $wind.width();
@@ -137,6 +138,11 @@ $(document).ready(function () {
 
 	toggleFiltersElem.on('click', function() {
 		filtersContainer.toggleClass('opened');
+		menuElem.removeClass('opened');
+	});
+
+	$(document).on('click', '.close_enabled_filters', function() {
+		filtersContainer.removeClass('opened');
 		menuElem.removeClass('opened');
 	});
 
@@ -155,13 +161,13 @@ $(document).ready(function () {
 	}
 
 	$(document).mouseup(function (e) {
-		if (!menuElem.is(e.target) && menuElem.has(e.target).length === 0) {
+		if (!menuElem.is(e.target) && menuElem.has(e.target).length === 0 && !toggleNavElem.is(e.target) && toggleNavElem.has(e.target).length === 0) {
 			menuElem.removeClass('opened');
 		}
-		if (!filtersContainer.is(e.target) && filtersContainer.has(e.target).length === 0) {
+		if (!filtersContainer.is(e.target) && filtersContainer.has(e.target).length === 0 && !closeToggleFiltersElem.is(e.target) && closeToggleFiltersElem.has(e.target).length === 0) {
 			filtersContainer.removeClass('opened');
 		}
-	  });
+	});
 
 });
 

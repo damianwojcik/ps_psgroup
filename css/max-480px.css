@@ -27,7 +27,7 @@
     padding: 0;
 }
 
-.product_list.grid .product {
+.product_list.grid .productitem {
     padding: 10px;
 }
 
@@ -37,19 +37,16 @@
 
 .product_list.grid li .product__name {
     height: 30px;
+    max-width: 90%;
+}
+
+.product_list.grid .productitem .btn {
+    padding: 10px;
 }
 
 .product_list.grid li .product__img-link {
     height: auto;
     margin-bottom: 7px;
-}
-
-.product_list.grid li .product__img {
-    width: 100%;
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
 }
 
 .button-container .btn:not(:last-child) {

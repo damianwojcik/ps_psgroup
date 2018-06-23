@@ -47,7 +47,7 @@
 		{if $totModuloTablet == 0}{assign var='totModuloTablet' value=$nbItemsPerLineTablet}{/if}
 		{if $totModuloMobile == 0}{assign var='totModuloMobile' value=$nbItemsPerLineMobile}{/if}
 		<li class="ajax_block_product">
-			<div class="product" itemscope itemtype="https://schema.org/Product">
+			<div class="productitem" itemscope itemtype="https://schema.org/Product">
 				<a class="product__img-link" href="{$product.link|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}" itemprop="url">
 					<img class="product__img " src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default')|escape:'html':'UTF-8'}" alt="{if !empty($product.legend)}{$product.legend|escape:'html':'UTF-8'}{else}{$product.name|escape:'html':'UTF-8'}{/if}" title="{if !empty($product.legend)}{$product.legend|escape:'html':'UTF-8'}{else}{$product.name|escape:'html':'UTF-8'}{/if}" itemprop="image" />
 				</a>
@@ -110,7 +110,7 @@
 				<div class="product__content">
 					<h2 class="product__name" itemprop="name">
 						{if isset($product.pack_quantity) && $product.pack_quantity}{$product.pack_quantity|intval|cat:' x '}{/if}
-						<a href="{$product.link|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}" itemprop="url" >
+						<a class="product__name-link" href="{$product.link|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}" itemprop="url" >
 							{$product.name|truncate:45:'...'|escape:'html':'UTF-8'}
 						</a>
 					</h2>
@@ -193,6 +193,59 @@
 		</li>
 	{/foreach}
 	</ul>
+
+	<script>
+		{literal}
+			$(document).ready(function() {
+				var openPopupLinks = $('.contact-us-popup');
+				openPopupLinks.each(function() {
+					let currentProductName = ($(this).parent().parent().find('.product__name-link').text().trim());
+					$(this).fancybox({
+						type: 'ajax',
+                        autoDimensions: false,
+                        autoSize: false,
+                        width: 600,
+                        height: 'auto',
+						afterShow: function() {
+							let productInput = $('.productInput');
+							productInput.val(currentProductName);
+                        }
+					});
+				});
+
+				$('.contact-form-box').submit(function(e) {
+					e.preventDefault();
+					var formdata = new FormData($(this)[0]);
+					formdata.append('submitMessage', 1);
+					var that = $(this);
+					
+					$.ajax({
+						type: 'POST',
+						data: formdata,
+						url: $(this).attr('action'),
+						contentType: false,
+						processData: false,
+						success: function(data){
+							var error = $($.parseHTML(data)).filter('.alert.alert-danger');
+							
+							if(error.length > 0) {
+								that.prepend(error)
+							}
+							else {
+								// succes!
+								var success = $($.parseHTML(data)).filter('.alert.alert-success');
+								that.fadeOut('fast', function(){
+									$(this).after(success)
+								});
+							}
+						}
+					})
+					
+				
+				});
+			});
+		{/literal}
+	</script>
 
 {addJsDefL name=min_item}{l s='Please select at least one product' js=1}{/addJsDefL}
 {addJsDefL name=max_item}{l s='You cannot add more than %d product(s) to the product comparison' sprintf=$comparator_max_item js=1}{/addJsDefL}

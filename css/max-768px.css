@@ -24,7 +24,7 @@
     padding: 0 5px;
 }
 
-.product_list.grid .product {
+.product_list.grid .productitem {
     padding: 20px;
 }
 
@@ -34,4 +34,15 @@
 
 .product_list.grid li .product__name {
     height: 42px;
+}
+
+.product_list.list .button-container .btn {
+    display: block;
+    float: none;
+    margin-bottom: 10px;
+}
+
+.product_list.list .button-container .btn:not(:first-child) {
+    margin-left: 0;
+    margin-bottom: 0;
 }

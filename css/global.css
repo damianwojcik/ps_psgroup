@@ -593,7 +593,10 @@ a:hover, a:active, a:visited, a:focus {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353645', endColorstr='#f05c50',GradientType=1 ); /* IE6-9 */
 }
 
-.btn-rect {
+.btn-rect,
+.btn-rect:active,
+.btn-rect:focus,
+.btn-rect:visited {
   border-radius: 0;
 }
 
@@ -1092,6 +1095,10 @@ button:hover {
   display: none;
 }
 
+.close_enabled_filters {
+  display: none;
+}
+
 .grid-list-buttons li {
   display: inline-block;
 }
@@ -1245,7 +1252,7 @@ input[type=checkbox] {
 }
 
 /* BEGIN PRODUCT MODULE */
-.product {
+.productitem {
   display: table;
   width: 100%;
   border: 1px solid rgba(0,0,0,.1);
@@ -1306,7 +1313,7 @@ input[type=checkbox] {
   position: relative;
 }
 
-.product .btn {
+.productitem .btn {
   display: block;
   font-size: 13px;
   padding: 23px 32px;
@@ -1323,7 +1330,7 @@ input[type=checkbox] {
   margin-right: 30px;
 }
 
-.product_list.grid .product {
+.product_list.grid .productitem {
   padding: 25px;
 }
 
