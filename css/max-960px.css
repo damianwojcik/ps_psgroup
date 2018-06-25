@@ -96,6 +96,10 @@
 }
 /* END MOBILE MENU */
 
+.section-categories {
+    margin-bottom: 50px;
+}
+
 .btn, .btn:active, .btn:focus, .btn:visited {
     font-size: 12px;
     padding: 12px 20px 10px 20px;
@@ -119,6 +123,14 @@
     width: 21px;
     height: 34px;
     background-size: cover;
+}
+
+.section-manufacturers {
+    padding-top: 45px;
+}
+
+.manufacturerslider__img {
+    height: 100px;
 }
 
 .btn-wrapper {

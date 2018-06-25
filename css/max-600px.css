@@ -23,11 +23,11 @@
     right: 15px;
 }
 
-.content .swiper-button-prev {
+.categoryslider .swiper-button-prev {
     left: 0;
 }
 
-.content .swiper-button-next {
+.categoryslider .swiper-button-next {
     right: 0;
 }
 

@@ -1,6 +1,29 @@
+.section-categories {
+    margin-bottom: 70px;
+}
+
 .container {
     max-width: 100%;
     width: 100%;
+}
+
+#cmsinfo_block .container {
+    width: 100%;
+}
+
+.servicebox {
+    padding: 50px 15px;
+}
+
+.servicebox i {
+    margin-bottom: 25px;
+}
+
+.servicebox [class^="flaticon-"]:before,
+.servicebox [class*=" flaticon-"]:before,
+.servicebox [class^="flaticon-"]:after,
+.servicebox [class*=" flaticon-"]:after {
+  font-size: 90px;
 }
 
 .content .container,
@@ -32,6 +55,23 @@
 
 .categoryslider__img {
     height: 250px;
+}
+
+.section-manufacturers {
+    padding-top: 50px;
+}
+
+.manufacturerslider {
+    max-width: 100%;
+    width: 100%;
+}
+
+.manufacturerslider .swiper-button-prev {
+    left: -20px;
+}
+
+.manufacturerslider .swiper-button-next {
+    right: -20px;
 }
 
 .button-container {

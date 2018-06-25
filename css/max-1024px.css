@@ -29,6 +29,10 @@
     height: 200px;
 }
 
+.servicebox h3 {
+    font-size: 18px;
+}
+
 .homeform form {
     max-width: 100%;
     width: 100%;
