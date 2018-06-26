@@ -129,6 +129,10 @@
     padding-top: 45px;
 }
 
+.cms .section-manufacturers {
+    padding-bottom: 45px;
+}
+
 .manufacturerslider__img {
     height: 100px;
 }
@@ -288,4 +292,17 @@
 .category .col-3.opened {
     visibility: visible;
     height: 100%;
+}
+
+.rte {
+    text-align: center;
+}
+
+.rte p {
+    float: none !important;
+}
+
+.page-title {
+    font-size: 32px;
+    padding: 60px 0 55px 0;    
 }

@@ -782,7 +782,7 @@ button:hover {
 
 /* BEGIN CONTENT */
 .content {
-  padding-top: 105px;
+  padding-top: 102px;
 }
 
 .index .content {
@@ -793,7 +793,8 @@ button:hover {
     padding: 100px 15px; 
 }
 
-.index .content .container .row {
+.index .content .container .row,
+.cms .content .container .row {
     display: block;
 }
 
@@ -1150,7 +1151,7 @@ button:hover {
 
 /* BEGIN MANUFACTURERSLIDER */
 .section-manufacturers {
-  padding-top: 100px;
+  padding-top: 70px;
   margin-bottom: 0;
 }
 
@@ -1216,6 +1217,48 @@ button:hover {
     display: none;
 }
 /* END FOOTER */
+
+/* BEGIN SECTION TITLE */
+.section-title {
+  position: relative;
+  background-image: url(../img/wholesale-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 3px 20px 0px rgba(0,0,0,.4);
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.category .section-title,
+.product .section-title {
+  background-image: url(../img/products-bg.jpg);
+}
+
+.section-title .container {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.page-title {
+  display: inline-block;
+  margin: 0;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 36px;
+  line-height: 1.2;
+  padding: 80px 0 75px 0;
+  font-weight: bold;
+}
+
+.page-title a {
+  color: #fff;
+}
+
+.navigation-pipe {
+  margin: 0 10px;
+}
+/* END SECTION TITLE */
 
 /* CATEGORY PAGE */
 .sortPagiBar {
@@ -1556,6 +1599,42 @@ input[type=checkbox] {
   float: right;
 }
 /* END PAGINATION */
+
+/* BEGIN CMS PAGE */
+.rte {
+  display: block;
+  border-bottom: 1px solid #ee5c50;
+  font-size: 13px;
+  padding-bottom: 15px;
+}
+
+.rte img {
+  display: inline-block;
+}
+
+.rte p {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 20px;
+  min-width: 260px;
+}
+
+.rte p br {
+  display: block;
+  content: '';
+  line-height: 30px;
+  margin: 25px 0;
+}
+
+.cms .section-manufacturers {
+  padding-bottom: 70px;
+}
+
+.cms .content .container {
+  padding-bottom: 0;
+  margin-bottom: -23px;
+}
+/* END CMS PAGE */
 
 .breadcrumb {
   display: none;

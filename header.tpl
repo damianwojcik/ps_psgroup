@@ -99,6 +99,9 @@
 				</div><!-- /.slider_row -->
 			</header>
 			<main class="content">
+				{if $page_name !='index'}
+						{include file="$tpl_dir./title.tpl"}
+				{/if}
 				<div class="container">
 					<div class="row">
 						{if $page_name !='index' && $page_name !='pagenotfound'}
