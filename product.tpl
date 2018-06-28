@@ -42,17 +42,10 @@
 				{$confirmation}
 			</p>
 		{/if}
-		<div class="col col-6 pb-left-column">
+		<div class="col col-6">
 			{if isset($images) && count($images) > 0}
 				<!-- thumbnails -->
-				<div id="views_block" class="clearfix {if isset($images) && count($images) < 2}hidden{/if}">
-					{if isset($images) && count($images) > 2}
-						<span class="view_scroll_spacer">
-							<a id="view_scroll_left" class="" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">
-								{l s='Previous'}
-							</a>
-						</span>
-					{/if}
+				<div id="views_block">
 					<div id="thumbs_list">
 						<ul id="thumbs_list_frame">
 						{if isset($images)}
@@ -72,23 +65,8 @@
 						{/if}
 						</ul>
 					</div> <!-- end thumbs_list -->
-					{if isset($images) && count($images) > 2}
-						<a id="view_scroll_right" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">
-							{l s='Next'}
-						</a>
-					{/if}
 				</div> <!-- end views-block -->
 				<!-- end thumbnails -->
-			{/if}
-			{if isset($images) && count($images) > 1}
-				<p class="resetimg clear no-print">
-					<span id="wrapResetImages" style="display: none;">
-						<a href="{$link->getProductLink($product)|escape:'html':'UTF-8'}" data-id="resetImages">
-							<i class="icon-repeat"></i>
-							{l s='Display all pictures'}
-						</a>
-					</span>
-				</p>
 			{/if}
 			<!-- product img-->
 			<div id="image-block" class="clearfix">
@@ -120,117 +98,103 @@
 					</span>
 				{/if}
 			</div> <!-- end image-block -->
-		</div><!-- /.col-5 -->
+		</div><!-- /.col-6 -->
 		<div class="col col-6">
-			{if $product->online_only}
-				<p class="online_only">{l s='Online only'}</p>
-			{/if}
-			<h1 itemprop="name" id="js-productname">{$product->name|escape:'html':'UTF-8'}</h1>
-			<p id="product_reference"{if empty($product->reference) || !$product->reference} style="display: none;"{/if}>
-				<label>{l s='Reference:'} </label>
-				<span class="editable" itemprop="sku"{if !empty($product->reference) && $product->reference} content="{$product->reference}"{/if}>{if !isset($groups)}{$product->reference|escape:'html':'UTF-8'}{/if}</span>
-			</p>
-			{if $product->description_short || $packItems|@count > 0}
-				<div id="short_description_block">
-					{if $product->description_short}
-						<div id="short_description_content" class="rte align_justify" itemprop="description">{$product->description_short}</div>
-					{/if}
-					{if $product->description}
-						<p class="buttons_bottom_block">
-							<a href="javascript:{ldelim}{rdelim}" class="button">
-								{l s='More details'}
+			<div class="productitem">
+				<h2 class="product__name" itemprop="name">{$product->name|escape:'html':'UTF-8'}</h2>
+				<h3 class="product__manufacturer">
+					{l s='Manufacturer: '}{$product->manufacturer_name|truncate:45:'...'|escape:'html':'UTF-8'}
+				</h3>
+				{if $product->description_short || $packItems|@count > 0}
+					<div id="short_description_block">
+						{if $product->description_short}
+							<div id="short_description_content" itemprop="description">
+								<p class="product__description">
+									{$product->description_short|strip_Tags|trim}
+								</p>
+							</div>
+						{/if}
+						<div class="button-container">
+							<a class="contact-us-popup btn btn-rect" href="{$link->getPageLink('contact')}?content_only=1" title="{l s='Buy'}">
+								{l s='Buy now'}
 							</a>
-						</p>
-					{/if}
-				</div> <!-- end short_description_block -->
-			{/if}
-			{if ($display_qties == 1 && !$PS_CATALOG_MODE && $PS_STOCK_MANAGEMENT && $product->available_for_order)}
-				<!-- number of item in stock -->
-				<p id="pQuantityAvailable"{if $product->quantity <= 0} style="display: none;"{/if}>
-					<span id="quantityAvailable">{$product->quantity|intval}</span>
-					<span {if $product->quantity > 1} style="display: none;"{/if} id="quantityAvailableTxt">{l s='Item'}</span>
-					<span {if $product->quantity == 1} style="display: none;"{/if} id="quantityAvailableTxtMultiple">{l s='Items'}</span>
-				</p>
-			{/if}
-			<!-- availability or doesntExist -->
-			<p id="availability_statut"{if !$PS_STOCK_MANAGEMENT || ($product->quantity <= 0 && !$product->available_later && $allow_oosp) || ($product->quantity > 0 && !$product->available_now) || !$product->available_for_order || $PS_CATALOG_MODE} style="display: none;"{/if}>
-				{*<span id="availability_label">{l s='Availability:'}</span>*}
-				<span id="availability_value" class="label{if $product->quantity <= 0 && !$allow_oosp} label-danger{elseif $product->quantity <= 0} label-warning{else} label-success{/if}">{if $product->quantity <= 0}{if $PS_STOCK_MANAGEMENT && $allow_oosp}{$product->available_later}{else}{l s='This product is no longer in stock'}{/if}{elseif $PS_STOCK_MANAGEMENT}{$product->available_now}{/if}</span>
-			</p>
-			{if $PS_STOCK_MANAGEMENT}
-				{if !$product->is_virtual}{hook h="displayProductDeliveryTime" product=$product}{/if}
-				<p class="warning_inline" id="last_quantities"{if ($product->quantity > $last_qties || $product->quantity <= 0) || $allow_oosp || !$product->available_for_order || $PS_CATALOG_MODE} style="display: none"{/if} >{l s='Warning: Last items in stock!'}</p>
-			{/if}
-			<p id="availability_date"{if ($product->quantity > 0) || !$product->available_for_order || $PS_CATALOG_MODE || !isset($product->available_date) || $product->available_date < $smarty.now|date_format:'%Y-%m-%d'} style="display: none;"{/if}>
-				<span id="availability_date_label">{l s='Availability date:'}</span>
-				<span id="availability_date_value">{if Validate::isDate($product->available_date)}{dateFormat date=$product->available_date full=false}{/if}</span>
-			</p>
-			<!-- Out of stock hook -->
-			<div id="oosHook"{if $product->quantity > 0} style="display: none;"{/if}>
-				{$HOOK_PRODUCT_OOS}
-			</div>
+							{if $product->description}
+								<a class="btn btn-rect btn-dark js-viewmore" href="#" title="{l s='View'}">
+									{l s='More info'}
+								</a>
+							{/if}
+						</div><!-- /.button-container -->
+					</div> <!-- end short_description_block -->
+				{/if}
+				{if $PS_STOCK_MANAGEMENT}
+					{if !$product->is_virtual}{hook h="displayProductDeliveryTime" product=$product}{/if}
+					<p class="warning_inline" id="last_quantities"{if ($product->quantity > $last_qties || $product->quantity <= 0) || $allow_oosp || !$product->available_for_order || $PS_CATALOG_MODE} style="display: none"{/if} >{l s='Warning: Last items in stock!'}</p>
+				{/if}
+				<!-- Out of stock hook -->
+				<div id="oosHook"{if $product->quantity > 0} style="display: none;"{/if}>
+					{$HOOK_PRODUCT_OOS}
+				</div>
 
-			<script>
-            {literal}
-                $(document).ready(function() {
-                    $('#contact-us-popup').fancybox({
-                        type: 'ajax',
-                        autoDimensions: false,
-                        autoSize: false,
-                        width: 600,
-                        height: 'auto',
-                        afterShow: function() {
+				<script>
+					{literal}
+						$(document).ready(function() {
+							let currentProductName = $('.product__name').text().trim();
+							$('.contact-us-popup').fancybox({
+								type: 'ajax',
+								autoDimensions: false,
+								autoSize: false,
+								width: 600,
+								height: 'auto',
+								afterShow: function() {
+									let productInput = $('.productInput');
+									productInput.val(currentProductName);
+								$('.contact-form-box').submit(function(e) {
+								e.preventDefault();
+								var formdata = new FormData($(this)[0]);
+								formdata.append('submitMessage', 1);
+								var that = $(this);
+								
+								$.ajax({
+									type: 'POST',
+									data: formdata,
+									url: $(this).attr('action'),
+									contentType: false,
+									processData: false,
+									success: function(data){
+										var error = $($.parseHTML(data)).filter('.alert.alert-danger');
+										
+										if(error.length > 0) {
+											that.prepend(error)
+										}
+										else {
+											// succes!
+											var success = $($.parseHTML(data)).filter('.alert.alert-success');
+											that.fadeOut('fast', function(){
+												$(this).after(success)
+											});
+										}
+									}
+								})
+								});
+								}
+							});
 
-							// Puts productName inside product name field in contact form
-							var productName = $('#js-productname').text();
-							var productInput = $('#productInput');
-							productInput.val(productName);
-
-                           $('.contact-form-box').submit(function(e) {
-                               e.preventDefault();
-                               var formdata = new FormData($(this)[0]);
-                               formdata.append('submitMessage', 1);
-                               var that = $(this);
-                               
-                               $.ajax({
-                                   type: 'POST',
-                                   data: formdata,
-                                   url: $(this).attr('action'),
-                                   contentType: false,
-                                   processData: false,
-                                   success: function(data){
-                                       var error = $($.parseHTML(data)).filter('.alert.alert-danger');
-                                       
-                                       if(error.length > 0)
-                                           that.prepend(error)
-                                       else {
-                                           // succes!
-                                           var success = $($.parseHTML(data)).filter('.alert.alert-success');
-                                           that.fadeOut('fast', function(){
-                                                $(this).after(success)
-                                           });
-                                       }
-                                   }
-                               })
-                               
-                            
-                           });     
-                        }
-                    });
-                });
-            {/literal}
-            </script>
 			
-			{if isset($HOOK_EXTRA_RIGHT) && $HOOK_EXTRA_RIGHT}{$HOOK_EXTRA_RIGHT}{/if}
-		</div>
-		<!-- /.col-5 -->
+						});
+					{/literal}
+				</script>
+				
+				{if isset($HOOK_EXTRA_RIGHT) && $HOOK_EXTRA_RIGHT}{$HOOK_EXTRA_RIGHT}{/if}
+			</div><!-- /.productitem -->
+		</div><!-- /.col-6 -->
 	</div> <!-- end primary_block row -->
 	{if !$content_only}
 		{if isset($product) && $product->description}
 			<!-- full description -->
 			<section class="page-product-box">
-				<div  class="rte">{$product->description}</div>
-				<a href="{$link->getPageLink('contact')}?content_only=1" id="contact-us-popup">Contact Us</a>
+				<div class="product__description product__description--full">
+					{$product->description}
+				</div>
 			</section>
 			<!--end full description -->
 		{/if}

@@ -195,6 +195,18 @@ $(document).ready(function () {
 		}
 	});
 
+	// Single product page 'more info' button
+	$(".js-viewmore").click(function (event) {
+		event.preventDefault();
+		$('.page-product-box').fadeIn().promise().done(function() {
+			$('html, body').animate({
+				scrollTop: $('.product__description--full').offset().top - 30
+			}, 400)
+		});
+
+	});
+
+
 });
 
 function highdpiInit() {
