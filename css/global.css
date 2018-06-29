@@ -251,7 +251,8 @@ input::-moz-focus-inner {
 
 textarea {
   overflow: auto;
-  vertical-align: top; }
+  vertical-align: top; 
+  resize: vertical }
 
 table {
   border-collapse: collapse;
@@ -633,6 +634,68 @@ button:hover {
 }
 /* END BUTTONS */
 
+/* BEGIN ALERTS */
+.alert {
+  padding: 15px;
+  margin-bottom: 25px;
+  border: 1px solid transparent;
+  border-radius: 0px; }
+  .alert h4 {
+    margin-top: 0;
+    color: inherit; }
+  .alert .alert-link {
+    font-weight: bold; }
+  .alert > p,
+  .alert > ul {
+    margin-bottom: 0; }
+  .alert > p + p {
+    margin-top: 5px; }
+
+.alert-dismissable {
+  padding-right: 35px; }
+  .alert-dismissable .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit; }
+
+.alert-success {
+  background-color: #55c65e;
+  border-color: #48b151;
+  color: #fff; }
+  .alert-success hr {
+    border-top-color: #419f49; }
+  .alert-success .alert-link {
+    color: #e6e6e6; }
+
+.alert-info {
+  background-color: #5192f3;
+  border-color: #4b80c3;
+  color: #fff; }
+  .alert-info hr {
+    border-top-color: #3d73b7; }
+  .alert-info .alert-link {
+    color: #e6e6e6; }
+
+.alert-warning {
+  background-color: #fe9126;
+  border-color: #e4752b;
+  color: #fff; }
+  .alert-warning hr {
+    border-top-color: #da681c; }
+  .alert-warning .alert-link {
+    color: #e6e6e6; }
+
+.alert-danger {
+  background-color: #f3515c;
+  border-color: #d4323d;
+  color: #fff; }
+  .alert-danger hr {
+    border-top-color: #c32933; }
+  .alert-danger .alert-link {
+    color: #e6e6e6; }
+/* END ALERTS */
+
 /* BEGIN LAYOUT */
 .section {
   display: block;
@@ -699,7 +762,7 @@ button:hover {
     position: fixed;
     top: 0;
     display: block;
-    z-index: 9999;
+    z-index: 999;
     width: 100%;
     text-transform: uppercase;
     background: #353645;
@@ -730,6 +793,10 @@ button:hover {
 
 .toppanel__menu-list>li {
     float: left;
+}
+
+.toppanel__menu-list>li.sfHoverForce a {
+  color: #ec5b50;
 }
 
 .toppanel__menu-list>li.mobile {
@@ -1777,5 +1844,30 @@ input[type=checkbox] {
 .breadcrumbs li span {
   font-weight: bold;
 }
+
+/* BEGIN CONTACT PAGE */
+.fancybox-inner {
+  z-index: 9999;
+}
+
+.contact .homeform,
+.fancybox-inner .homeform {
+  background-image: none;
+}
+
+.contact .homeform form .form-control,
+.fancybox-inner .homeform form .form-control {
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.contact .homeform form .form-control:focus,
+.fancybox-inner .homeform form .form-control:focus {
+  border: 1px solid #000;
+}
+
+.fancybox-inner .homeform form  {
+  margin: 30px 0;
+}
+/* END CONTACT PAGE */
 
 /* END THEME */
