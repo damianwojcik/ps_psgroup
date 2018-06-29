@@ -36,6 +36,32 @@
 	{/if}
 <div itemscope itemtype="https://schema.org/Product">
 	<meta itemprop="url" content="{$link->getProductLink($product)}">
+	<div class="row">
+		<ul class="breadcrumbs">
+			<li>
+				<a href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{$shop_name|escape:'html':'UTF-8'}">
+					<i class="flaticon-home"></i>
+				</a>
+			</li>
+			{foreach from=Product::getProductCategoriesFull(Tools::getValue('id_product')) item=cat}
+			{if $cat.id_category !== '14' && $cat.id_category !== '2'}
+    		<li>
+				<a href="{$link->getCategoryLink(14)}" title="{$cat.name|escape:'html':'UTF-8'}">{$cat.name|escape:'html':'UTF-8'}</a>
+			</li>
+			{/if}
+			{/foreach}
+			<li>
+				<a href="{$link->getCategoryLink(14)}" title="{$product->manufacturer_name|escape:'html':'UTF-8'}">
+					{$product->manufacturer_name|escape:'html':'UTF-8'}
+				</a>
+			</li>
+			<li>
+				<span>
+					{$product->name|escape:'html':'UTF-8'}
+				</span>
+			</li>
+		</ul>
+	</div><!-- /.row -->
 	<div class="primary_block row">
 		{if isset($confirmation) && $confirmation}
 			<p class="confirmation">

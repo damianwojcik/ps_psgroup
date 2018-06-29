@@ -109,3 +109,18 @@
     top: auto;
     transform: none;
 }
+
+.product .productitem {
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+.product .product__name {
+    font-size: 30px;
+}
+
+.product .product__manufacturer {
+    font-size: 18px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}

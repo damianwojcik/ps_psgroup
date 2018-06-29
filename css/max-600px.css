@@ -78,3 +78,19 @@
 .page-title {
     font-size: 28px;
 }
+
+#image-block {
+    height: 275px;
+}
+
+.product .product__name {
+    font-size: 26px;
+}
+
+.product .product__manufacturer {
+    font-size: 17px;
+}
+
+.breadcrumbs li:last-child {
+    display: none;
+}

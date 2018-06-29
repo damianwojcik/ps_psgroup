@@ -79,3 +79,11 @@
     width: auto;
     height: 100%;
 }
+
+#thumbs_list_frame li:nth-child(n+4) {
+    display: none;
+}
+
+#image-block {
+    height: 250px;
+}

@@ -104,9 +104,6 @@
 				{/if}
 				<div class="container">
 					<div class="row">
-						{if $page_name !='index' && $page_name !='pagenotfound'}
-							{include file="$tpl_dir./breadcrumb.tpl"}
-						{/if}
 						{if isset($left_column_size) && !empty($left_column_size)}
 							<div id="left_column" class="col col-{$left_column_size|intval}">{$HOOK_LEFT_COLUMN}</div>
 						{/if}

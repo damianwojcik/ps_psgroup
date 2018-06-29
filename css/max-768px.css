@@ -6,6 +6,10 @@
     margin-bottom: 30px;
 }
 
+.col-6 {
+    width: 100%;
+}
+
 #cmsinfo_block .container {
     padding: 45px 50px;
 }
@@ -65,4 +69,53 @@
 .product_list.list .button-container .btn:not(:first-child) {
     margin-left: 0;
     margin-bottom: 0;
+}
+
+#views_block {
+    width: auto;
+    float: none;
+    margin-bottom: 20px;
+}
+
+#thumbs_list li {
+    display: inline-block;
+    width: 70px;
+}
+
+#thumbs_list li:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 15px;
+}
+
+#image-block {
+    float: none;
+    width: 100%;
+    margin: 0 auto 35px auto;
+    position: relative;
+    height: 325px;
+}
+
+#image-block img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 100%;
+}
+
+.product .productitem {
+    text-align: center;
+}
+
+.product .button-container {
+    display: block;
+}
+
+.product .page-product-box .product__description {
+    padding-bottom: 0;
+}
+
+.breadcrumbs {
+    padding-bottom: 25px;
 }
