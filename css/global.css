@@ -542,12 +542,14 @@ ul, ol {
   font-style: normal;
 }
 
-.flaticon-like:before { content: "\f100"; }
-.flaticon-home:before { content: "\f101"; }
-.flaticon-price-tag:before { content: "\f102"; }
-.flaticon-planet-earth:before { content: "\f103"; }
-.flaticon-grid:before { content: "\f104"; }
-.flaticon-menu:before { content: "\f105"; }
+.flaticon-search:before { content: "\f100"; }
+.flaticon-list:before { content: "\f101"; }
+.flaticon-menu:before { content: "\f102"; }
+.flaticon-grid:before { content: "\f103"; }
+.flaticon-planet-earth:before { content: "\f104"; }
+.flaticon-price-tag:before { content: "\f105"; }
+.flaticon-home:before { content: "\f106"; }
+.flaticon-like:before { content: "\f107"; }
 /* END ICONS */
 
 /* BEGIN BUTTONS */
@@ -631,6 +633,29 @@ button {
 
 button:hover {
   color: #f05c50;
+}
+
+.btn.btn-search,
+.btn.btn-search:focus,
+.btn.btn-search:active {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 0;
+  background-color: rgba(0,0,0,0.5);
+  padding: 6px 20px;
+}
+
+.btn.btn-search span {
+  position: absolute;
+  text-indent: -9999px;
+}
+
+.btn.btn-search:before {
+  content: "\f100";
+  font-family: "Flaticon";
+  font-size: 15px;
 }
 /* END BUTTONS */
 
@@ -838,12 +863,22 @@ button:hover {
     position: relative;
 }
 
+.languages-block:hover > ul {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
 .languages-block-top ul {
-    display: none;
+    display: block;
     position: absolute;
     left: 0;
     top: 47px;
     width: 120px;
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
 }
 
 .languages-block-top ul a {
@@ -1417,7 +1452,7 @@ button:hover {
   appearance: none;
   background: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KICA8Zz4KICAgIDxwYXRoIGQ9Im0xMjEuMywzNC42Yy0xLjYtMS42LTQuMi0xLjYtNS44LDBsLTUxLDUxLjEtNTEuMS01MS4xYy0xLjYtMS42LTQuMi0xLjYtNS44LDAtMS42LDEuNi0xLjYsNC4yIDAsNS44bDUzLjksNTMuOWMwLjgsMC44IDEuOCwxLjIgMi45LDEuMiAxLDAgMi4xLTAuNCAyLjktMS4ybDUzLjktNTMuOWMxLjctMS42IDEuNy00LjIgMC4xLTUuOHoiIGZpbGw9IiMwMDAwMDAiLz4KICA8L2c+Cjwvc3ZnPgo=") no-repeat;
   background-size: 10px;
-  background-position: calc(100% - 17px) center;
+  background-position: right center;
   background-repeat: no-repeat;
   background-color: transparent;
 }
@@ -1869,5 +1904,40 @@ input[type=checkbox] {
   margin: 30px 0;
 }
 /* END CONTACT PAGE */
+
+/* BEGIN SEARCH */
+.page-heading.product-listing {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+#searchbox {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.search_query.form-control {
+  padding-right: 70px;
+}
+
+.page-heading.product-listing {
+  font-size: 30px;
+}
+/* END SEARCH */
+
+/* BEGIN OTHER FILES */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+	.replace-2x {
+		font-size: 1px;
+	}
+	.example {
+		background-image: url(../images/example2x.png);
+		-webkit-background-size:13px 13px;
+		-moz-background-size:13px 13px;
+		-o-background-size:13px 13px;
+		background-size:13px 13px;
+	}
+}
+/* END OTHER FILES */
 
 /* END THEME */

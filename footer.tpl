@@ -37,7 +37,7 @@
 								<h2 class="section-header__subheading">{l s='Get in touch'}</h2>
 								<h1 class="section-header__heading">{l s='Contact'}</h1>
 							</header><!-- /.section-header -->
-							<form action="./index.php?controller=contact" method="post" enctype="multipart/form-data">
+							<form action="{$link->getPageLink('contact-form.php')}" method="post" enctype="multipart/form-data">
 								<fieldset>
 									<input type="hidden" name="id_contact" value="2">
 									<span class="hidden">

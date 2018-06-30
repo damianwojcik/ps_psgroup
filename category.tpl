@@ -104,6 +104,7 @@
 		{/if}
 		{if $products}
 			<button class="toggle-filters"><i class="flaticon-menu"></i>{l s='Filter'}</button>
+			{hook h='displayMobileTopSiteMap'}
 			<div class="content_sortPagiBar">
 				<div class="sortPagiBar">
 					{include file="./product-sort.tpl"}

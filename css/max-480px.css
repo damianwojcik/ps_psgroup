@@ -60,7 +60,7 @@
 }
 
 .productsSortForm {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .productsSortForm .selectProductSort {
@@ -86,4 +86,9 @@
 
 #image-block {
     height: 250px;
+}
+
+.page-heading.product-listing {
+    font-size: 20px;
+    margin-bottom: 15px;
 }

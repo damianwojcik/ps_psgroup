@@ -19,7 +19,6 @@ $(document).ready(function () {
 	highdpiInit();
 	if (typeof quickView !== 'undefined' && quickView)
 		quick_view();
-	dropDown();
 
 	if (typeof page_name != 'undefined' && !in_array(page_name, ['index', 'product'])) {
 		bindGrid();
@@ -93,6 +92,9 @@ $(document).ready(function () {
 	var homeSlider = new Swiper('.homeslider.swiper-container', {
 		slidesPerView: 1,
 		loop: true,
+		autoplay: {
+			delay: 5000,
+		},
 		navigation: {
 			nextEl: '.homeslider .swiper-button-next',
 			prevEl: '.homeslider .swiper-button-prev',
@@ -126,6 +128,9 @@ $(document).ready(function () {
 	var manufacturerSlider = new Swiper('.manufacturerslider .swiper-container', {
 		slidesPerView: 6,
 		loop: true,
+		autoplay: {
+			delay: 3000,
+		},
 		navigation: {
 			nextEl: '.manufacturerslider .swiper-button-next',
 			prevEl: '.manufacturerslider .swiper-button-prev',
@@ -327,10 +332,11 @@ function bindGrid() {
 	if (!view && (typeof displayList != 'undefined') && displayList)
 		view = 'list';
 
-	if (view && view != 'grid')
+	if (view && view != 'list')
 		display(view);
 	else
-		$('.display').find('li#grid').addClass('selected');
+		$('.display').find('li#list').addClass('selected');
+		display("list");
 
 	$(document).on('click', '#grid', function (e) {
 		e.preventDefault();
@@ -355,38 +361,6 @@ function display(view) {
 		$('.display').find('li#list').removeAttr('class');
 		$.totalStorage('display', 'grid');
 	}
-}
-
-function dropDown() {
-	elementClick = '#header .current';
-	elementSlide = 'ul.toogle_content';
-	activeClass = 'active';
-
-	$(elementClick).on('click', function (e) {
-		e.stopPropagation();
-		var subUl = $(this).next(elementSlide);
-		if (subUl.is(':hidden')) {
-			subUl.slideDown();
-			$(this).addClass(activeClass);
-		} else {
-			subUl.slideUp();
-			$(this).removeClass(activeClass);
-		}
-		$(elementClick).not(this).next(elementSlide).slideUp();
-		$(elementClick).not(this).removeClass(activeClass);
-		e.preventDefault();
-	});
-
-	$(elementSlide).on('click', function (e) {
-		e.stopPropagation();
-	});
-
-	$(document).on('click', function (e) {
-		e.stopPropagation();
-		var elementHide = $(elementClick).next(elementSlide);
-		$(elementHide).slideUp();
-		$(elementClick).removeClass('active');
-	});
 }
 
 function accordionFooter(status) {

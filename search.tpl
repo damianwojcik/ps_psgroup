@@ -28,7 +28,7 @@
 <h1
 {if isset($instant_search) && $instant_search}id="instant_search_results"{/if}
 class="page-heading {if !isset($instant_search) || (isset($instant_search) && !$instant_search)} product-listing{/if}">
-    {l s='Search'}&nbsp;
+    {l s='Search'}
     {if $nbProducts > 0}
         <span class="lighter">
             "{if isset($search_query) && $search_query}{$search_query|escape:'html':'UTF-8'}{elseif $search_tag}{$search_tag|escape:'html':'UTF-8'}{elseif $ref}{$ref|escape:'html':'UTF-8'}{/if}"
@@ -65,15 +65,6 @@ class="page-heading {if !isset($instant_search) || (isset($instant_search) && !$
     <div class="content_sortPagiBar">
         <div class="sortPagiBar clearfix {if isset($instant_search) && $instant_search} instant_search{/if}">
             {include file="$tpl_dir./product-sort.tpl"}
-            {if !isset($instant_search) || (isset($instant_search) && !$instant_search)}
-                {include file="./nbr-product-page.tpl"}
-            {/if}
-        </div>
-    	<div class="top-pagination-content clearfix">
-            {include file="./product-compare.tpl"}
-            {if !isset($instant_search) || (isset($instant_search) && !$instant_search)}
-                {include file="$tpl_dir./pagination.tpl" no_follow=1}
-            {/if}
         </div>
 	</div>
 	{include file="$tpl_dir./product-list.tpl" products=$search_products}
