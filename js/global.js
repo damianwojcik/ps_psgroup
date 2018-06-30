@@ -211,6 +211,9 @@ $(document).ready(function () {
 
 	});
 
+	// Highlight active menu item
+	var url = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+	$('[href$="'+url+'"]').parent().addClass("active");
 
 });
 

@@ -820,7 +820,7 @@ button:hover {
     float: left;
 }
 
-.toppanel__menu-list>li.sfHoverForce a {
+.toppanel__menu-list>li.active a {
   color: #ec5b50;
 }
 
