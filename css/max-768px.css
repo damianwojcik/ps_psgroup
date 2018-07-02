@@ -46,6 +46,7 @@
 .pagination__list li {
     float: none;
     padding: 0 5px;
+    display: inline-block;
 }
 
 .product_list.grid .productitem {
@@ -117,7 +118,11 @@
 }
 
 .breadcrumbs {
-    padding-bottom: 25px;
+    padding-bottom: 15px;
+}
+
+.breadcrumbs li {
+    margin-bottom: 10px;
 }
 
 .page-heading.product-listing {

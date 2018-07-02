@@ -103,7 +103,8 @@
     margin-bottom: 50px;
 }
 
-.btn, .btn:active, .btn:focus, .btn:visited {
+.btn, .btn:active, .btn:focus, .btn:visited,
+.productitem .btn, .productitem .btn:active, .productitem .btn:focus, .productitem .btn:visited {
     font-size: 12px;
     padding: 12px 20px 10px 20px;
 }

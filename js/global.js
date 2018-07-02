@@ -213,7 +213,22 @@ $(document).ready(function () {
 
 	// Highlight active menu item
 	var url = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
-	$('[href$="'+url+'"]').parent().addClass("active");
+	if($('[href$="'+url+'"]').length > 0) {
+		$('[href$="'+url+'"]').parent().addClass("active");
+	} else {
+		$('.toppanel__menu-list .mobile').addClass("active");
+	}
+
+	// Add class to index toppanel as it is scrolled below slider
+	$(window).scroll(function() {
+		var topPanelElem = $('.toppanel');
+		var sliderElem = $('#slider_row');
+		if(topPanelElem.offset().top > sliderElem.outerHeight()) {
+			topPanelElem.addClass('dark');
+		} else {
+			topPanelElem.removeClass('dark');
+		}
+	});
 
 });
 

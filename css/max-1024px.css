@@ -1,4 +1,5 @@
-.btn, .btn:active, .btn:focus, .btn:visited {
+.btn, .btn:active, .btn:focus, .btn:visited,
+.productitem .btn, .productitem .btn:active, .productitem .btn:focus, .productitem .btn:visited {
     font-size: 14px;
     padding: 12px 30px 10px 30px;
 }
