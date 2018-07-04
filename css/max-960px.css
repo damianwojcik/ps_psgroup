@@ -71,32 +71,6 @@
     z-index: 9999;
     cursor: pointer;
 }
-
-.toggle-nav__line, .toggle-nav__line:before, .toggle-nav__line:after {
-    position: absolute;
-    content: '';
-    display: block;
-    background-color: #ec5b50;
-    width: 35px;
-    height: 3px;
-    margin: auto;
-    transition: all 0.4s ease;
-}
-
-.toggle-nav__line {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
-.toggle-nav__line:before {
-    transform: translateY(9px);
-}
-
-.toggle-nav__line:after {
-    transform: translateY(-9px);
-}
 /* END MOBILE MENU */
 
 .section-categories {

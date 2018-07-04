@@ -5,7 +5,9 @@
 
 .g-recaptcha {
     transform: scale(.77);
+    -webkit-transform: scale(.77);
     transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
     max-width: 232px;
 }
 

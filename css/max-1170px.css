@@ -102,6 +102,7 @@
     left: auto;
     top: auto;
     transform: none;
+    -webkit-transform: none;
 }
 
 .product .productitem {

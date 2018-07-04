@@ -896,6 +896,38 @@ button:hover {
 .languages-block-top ul a:hover {
     color: #f05c50;
 }
+
+/* BEGIN MOBILE MENU */
+
+.toggle-nav__line, .toggle-nav__line:before, .toggle-nav__line:after {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: #ec5b50;
+  width: 35px;
+  height: 3px;
+  margin: auto;
+  transition: all 0.4s ease;
+}
+
+.toggle-nav__line {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.toggle-nav__line:before {
+  transform: translateY(9px);
+  -webkit-transform: translateY(9px);
+}
+
+.toggle-nav__line:after {
+  transform: translateY(-9px);
+  -webkit-transform: translateY(-9px);
+}
+/* END MOBILE MENU */
+
 /* END HEADER */
 
 /* BEGIN CONTENT */
@@ -1182,6 +1214,7 @@ button:hover {
 
 .homeform .btn:hover {
     transform: scale(1.1);
+    -webkit-transform: scale(1.1);
     background-color: #ec5b50;
 }
 
@@ -1548,6 +1581,7 @@ input[type=checkbox] {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
 .product_list li {
@@ -1569,6 +1603,7 @@ input[type=checkbox] {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
 .product__name,
@@ -1648,6 +1683,7 @@ input[type=checkbox] {
   top: auto;
   left: auto;
   transform: none;
+  -webkit-transform: none;
 }
 
 .product_list.grid li .product__content {
