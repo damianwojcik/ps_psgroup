@@ -611,7 +611,9 @@ a:hover, a:active, a:visited, a:focus {
   background-color: #353645;
 }
 
-.btn.btn-dark:hover {
+.btn.btn-dark:hover,
+.btn.btn-dark:focus,
+.btn.btn-dark:visited {
   color: #ec5b50;
 }
 
@@ -1649,6 +1651,7 @@ input[type=checkbox] {
   width: 250px;
   height: 275px;
   position: relative;
+  display: block;
 }
 
 .productitem .btn {
