@@ -65,7 +65,6 @@
 			{include file="./product-list.tpl" products=$products}
 			<div class="content_sortPagiBar">
 				<div class="top-pagination-content">
-					{* {include file="./product-compare.tpl" paginationId='bottom'} *}
 					{include file="./pagination.tpl" paginationId='bottom'}
 				</div>
 			</div>

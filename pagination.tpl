@@ -58,8 +58,8 @@
 				{if $p != 1}
 					{assign var='p_previous' value=$p-1}
 					<li id="pagination_previous{if isset($paginationId)}_{$paginationId}{/if}" class="pagination_previous">
-						<a{$no_follow_text} href="{$link->goPage($requestPage, $p_previous)}" rel="prev">
-							< {l s='Prev'}
+						<a{$no_follow_text} href="{$link->goPage($requestPage, 2)}" rel="prev">
+							<span>< {l s='Prev'}</span>
 						</a>
 					</li>
 				{else}
@@ -149,8 +149,8 @@
 				{if $pages_nb > 1 AND $p != $pages_nb}
 					{assign var='p_next' value=$p+1}
 					<li id="pagination_next{if isset($paginationId)}_{$paginationId}{/if}" class="pagination_next">
-						<a{$no_follow_text} href="{$link->goPage($requestPage, $p_next)}" rel="next">
-							{l s='Next'} >
+						<a{$no_follow_text} href="{$link->goPage($requestPage, 2)}" rel="next">
+							<span>{l s='Next'} ></span>
 						</a>
 					</li>
 				{else}
@@ -171,9 +171,9 @@
 					{if isset($tag) AND $tag AND !is_array($tag)}
 						<input type="hidden" name="tag" value="{$tag|escape:'html':'UTF-8'}" />
 					{/if}
-	                <button type="submit">
+	                {* <button type="submit">
 	                	<span>{l s='Show all'}</span>
-	                </button>
+	                </button> *}
 					{if is_array($requestNb)}
 						{foreach from=$requestNb item=requestValue key=requestKey}
 							{if $requestKey != 'requestUrl' && $requestKey != 'p'}
@@ -181,7 +181,7 @@
 							{/if}
 						{/foreach}
 					{/if}
-	                <input name="n" id="nb_item" class="hidden" value="{$nb_products}" />
+	                <input name="n" id="nb_item" class="hidden" value="{$nb_products}" data-perpage="{$products_per_page}" />
 				</div>
 			</form>
 		{/if}
@@ -198,7 +198,7 @@
         	{assign var='productShowingStart' value=$n*$p-$n+1}
         {/if}
         {if $nb_products > 1}
-        	{l s='Showing %1$d - %2$d of %3$d item' sprintf=[$productShowingStart, $productShowing, $nb_products]}
+        	{l s='Showing %1$d - %2$d of %3$d item(s)' sprintf=[$productShowingStart, $productShowing, $nb_products]}
 		{else}
         	{l s='Showing %1$d - %2$d of 1 item' sprintf=[$productShowingStart, $productShowing]}
        	{/if}
