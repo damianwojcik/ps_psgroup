@@ -573,12 +573,6 @@ a:hover, a:active, a:visited, a:focus {
     white-space: nowrap;
 }
 
-.btn:active,
-.btn:focus,
-.btn:visited {
-  padding: inherit;
-}
-
 .btn:hover {
     background-color: #383745;
     color: #FFF;
@@ -1936,6 +1930,16 @@ input[type=checkbox] {
 .contact .homeform,
 .fancybox-inner .homeform {
   background-image: none;
+}
+
+.homeform__title {
+  text-transform: uppercase;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 35px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 .contact .homeform form .form-control,

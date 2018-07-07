@@ -48,6 +48,9 @@
 {else}
 	<section class="homeform">
 		<form action="{$request_uri}" method="post" class="contact-form-box" enctype="multipart/form-data">
+			<h2 class="homeform__title">
+				{l s='Leave us an email and we\'ll contact you'}
+			</h2>
 			{include file="$tpl_dir./errors.tpl"}
 			<fieldset>
 				<input type="hidden" name="id_contact" value="2">

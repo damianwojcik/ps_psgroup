@@ -3,6 +3,10 @@
     padding: 45px 30px;
 }
 
+.homeform__title {
+    font-size: 20px;
+}
+
 .homeform form, .section-header {
     margin-bottom: 20px;
 }
