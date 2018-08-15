@@ -115,10 +115,10 @@ $(document).ready(function () {
 			960: {
 				slidesPerView: 3
 			},
-			600: {
+			768: {
 				slidesPerView: 2
 			},
-			400: {
+			500: {
 				slidesPerView: 1
 			}
 		}
