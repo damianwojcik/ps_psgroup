@@ -17,6 +17,10 @@
     top: 0;
 }
 
+.homeslider .swiper-wrap {
+    top: -5vh;
+}
+
 .btn-wrapper {
     margin-top: 40px;
 }
