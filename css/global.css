@@ -288,7 +288,6 @@ a {
   color: #353645;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #353645;
     text-decoration: none; }
   a:focus {
     outline: none; }
@@ -574,7 +573,7 @@ a:hover, a:active, a:visited, a:focus {
 }
 
 .btn:hover {
-    background-color: #383745;
+    background-color: #D34237;
     color: #FFF;
 }
 
@@ -587,11 +586,8 @@ a:hover, a:active, a:visited, a:focus {
 }
 
 .btn-gradient:hover {
-    background: rgb(240,92,80); /* Old browsers */
-    background: -moz-linear-gradient(left, rgba(53,54,69,1) 0%, rgba(240,92,80,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(53,54,69,1) 0%, rgba(240,92,80,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,rgba(53,54,69,1) 0%, rgba(240,92,80,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353645', endColorstr='#f05c50',GradientType=1 ); /* IE6-9 */
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
 
 .btn-rect,
@@ -602,12 +598,11 @@ a:hover, a:active, a:visited, a:focus {
 }
 
 .btn.btn-dark {
-  background-color: #353645;
+  background-color: #1C1D2C;
 }
 
-.btn.btn-dark:hover,
-.btn.btn-dark:focus {
-  color: #ec5b50;
+.btn.btn-dark:hover {
+  background-color: #4F505F;
 }
 
 button {
@@ -643,6 +638,10 @@ button:hover {
   border-radius: 0;
   background-color: rgba(0,0,0,0.5);
   padding: 6px 20px;
+}
+
+.btn.btn-search:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
 .btn.btn-search span {
@@ -1021,6 +1020,11 @@ button:hover {
     text-align: center;
 }
 
+.homeslider .swiper-button-next,
+.homeslider .swiper-button-prev {
+  top: 38%;
+}
+
 .homeslider .swiper-button-next {
     right: 1.5vw;
 }
@@ -1036,7 +1040,7 @@ button:hover {
     color: #FFFFFF;
     text-transform: uppercase;
     position: relative;
-    top: -7vh;
+    top: -12vh;
 }
 
 .homeslider .swiper-wrap h1,
@@ -1358,9 +1362,14 @@ button:hover {
     margin-top: 10px;
 }
 
+#footer .toppanel__menu-list li a {
+  transition: 0.4s all ease;
+}
+
 #footer .toppanel__menu-list li a:hover,
 #footer .toppanel__menu-list>li.active a {
-    color: #353645;
+    text-decoration: underline;
+    color: white;
 }
 
 
@@ -1457,6 +1466,11 @@ button:hover {
 
 .productsSortForm {
   float: left;
+  transition: all 0.4s ease;
+}
+
+.productsSortForm:hover {
+  background-color: rgba(30, 144, 255, 0.1);
 }
 
 .productsSortForm .select,
@@ -1973,6 +1987,11 @@ input[type=checkbox] {
 
 .search_query.form-control {
   padding-right: 70px;
+  transition: all 0.4s ease;
+}
+
+.search_query.form-control:hover {
+  background-color: rgba(30, 144, 255, 0.1)
 }
 
 .page-heading.product-listing {
