@@ -65,11 +65,11 @@
 }
 
 .title_block, .layered_subtitle_heading, #layered_block_left .layered_subtitle,
-.layered_filter a {
+.layered_filter label {
     font-size: 14px;
 }
 
-.layered_filter a {
+.layered_filter label {
     position: relative;
     top: -2px;
 }
