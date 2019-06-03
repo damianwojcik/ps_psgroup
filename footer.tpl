@@ -80,11 +80,14 @@
 				<div class="container">
 					<div class="row">
 						<div class="site-logo">
-								<a href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{$shop_name|escape:'html':'UTF-8'}">
-									<img class="logo img-responsive" src="{$logo_url}" alt="{$shop_name|escape:'html':'UTF-8'}"{if isset($logo_image_width) && $logo_image_width} width="{$logo_image_width}"{/if}{if isset($logo_image_height) && $logo_image_height} height="{$logo_image_height}"{/if}/>
-								</a>
-							</div>
-							{if isset($HOOK_TOP)}{$HOOK_TOP}{/if}
+							<a href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{$shop_name|escape:'html':'UTF-8'}">
+								<img class="logo img-responsive" src="{$logo_url}" alt="{$shop_name|escape:'html':'UTF-8'}"{if isset($logo_image_width) && $logo_image_width} width="{$logo_image_width}"{/if}{if isset($logo_image_height) && $logo_image_height} height="{$logo_image_height}"{/if}/>
+							</a>
+						</div>
+						{if isset($HOOK_TOP)}{$HOOK_TOP}{/if}
+						<p class="copy">
+                        	2018 &copy; <a href="http://dwojcik.pro/" target="_blank" rel="noopener">dwojcik.pro</a>
+                    	</p>
 					</div><!-- /.row -->
 				</div><!-- /.container -->
 			</footer><!-- /#footer -->
