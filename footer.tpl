@@ -86,7 +86,7 @@
 						</div>
 						{if isset($HOOK_TOP)}{$HOOK_TOP}{/if}
 						<p class="copy">
-                        	2018 &copy; <a href="http://dwojcik.pro/" target="_blank" rel="noopener">dwojcik.pro</a>
+                        	2018 &copy; <a href="http://dwojcik.me/" target="_blank" rel="noopener">dwojcik.me</a>
                     	</p>
 					</div><!-- /.row -->
 				</div><!-- /.container -->
